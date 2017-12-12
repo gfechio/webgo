@@ -1,0 +1,6 @@
+<h1>MAPS TEST{{.Title}}</h1>
+
+<form action="/maps/{{.Title}}" method="GET">
+<div><textarea name="body" rows="20" cols="80">{{printf "%s" .Body}}</textarea></div>
+<div><input type="submit" value="OK"></div>
+</form>
