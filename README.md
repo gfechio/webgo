@@ -5,15 +5,42 @@ Web app in Golang
 ## Getting Started
 
  - Serving port 8080 to serve with with NGINX 
+ -  Parse OSM.PBF file
+ -  Preprocessing
 
 ### Prerequisites
 
  - Would like to serve that in a container 
+ - Golang 
+ - osm.pbf file from the alps -> http://download.geofabrik.de/europe.html
+ - Docker ( Using a redis instance on a docker container)
 
 ### Installing
 
 ```
-TO DO
+$ go get github.com/go-redis/redis
+$ go get github.com/qedus/osmpbf
+$ docker pull redis ; docker run -p 6379:6379 redis &
+
+```
+
+## Running the tests
+
+WEB:
+```
+http://127.0.0.1:8080/test
+
+http://127.0.0.1:8080/maps/maps
+
+```
+
+Parser
+```
+To check Nodes
+$ go run redisClient.go Node:120
+
+To check Ways
+$ go run redisClient.go Way:12345
 ```
 
 ## Built With
